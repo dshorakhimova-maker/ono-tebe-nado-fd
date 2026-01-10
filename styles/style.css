@@ -16,26 +16,32 @@
   font-size: 18px;
   line-height: auto;
   justify-self: start; /* меню прижато к левому краю */
+  text-underline-offset: 3px;
 }
 
-.header__menu-item_active {
+.menu-item_no-marker {
   list-style: none;
 }
 
-.header__menu-item_active .header__menu-link {
+.menu-link_active {
   text-decoration: none;
+  pointer-events: none;
 }
 
-.header__address {
+.address {
   max-width: 240px;
   font-weight: 400;
   font-size: 18px;
   line-height: 135%;
   font-style: normal;
-  justify-self: end; /* контакты прижаты к правому краю */
   display: flex;
   flex-direction: column;
   list-style: none;
+  text-underline-offset: 4px;
+}
+
+.header .address {
+  justify-self: end;
 }
 
 .header__logo {
@@ -46,7 +52,7 @@
 
 .header__logo-image {
   display: block;
-  width: 100%;
+  width: 95%;
   height: auto;
 }
 
@@ -72,12 +78,9 @@
   z-index: 1; /* слой выше фона */
 }
 
-.cover__content {
+.cover__title {
   position: relative; /* чтобы быть выше оверлея */
   z-index: 2; /* слой выше оверлея */
-}
-
-.cover__title {
   width: 100%;
   color: #fff;
   font-size: 100px;
@@ -115,6 +118,8 @@
 }
 
 .description {
+  position: relative; /* чтобы быть выше оверлея */
+  z-index: 2; /* слой выше оверлея */
   display: block;
   max-width: 637px;
   width: 100%;
@@ -126,6 +131,8 @@
 }
 
 .bet-button {
+  position: relative; /* чтобы быть выше оверлея */
+  z-index: 2; /* слой выше оверлея */
   padding: 0;
   width: 256px;
   height: 51px;
@@ -156,12 +163,23 @@
 
 .lots__card-list {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   gap: 25px;
   list-style: none;
 }
 
 .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  text-underline-offset: 1px;
+}
+
+.lots__card-item {
+  flex: 0 0 334px;
+}
+
+.card__title {
   position: relative;
   z-index: 2;
   font-size: 22px;
@@ -214,6 +232,7 @@
   margin-left: 40px;
   background-color: transparent;
   cursor: pointer; /* курсор "рука" */
+  text-underline-offset: 4px;
 }
 
 .about {
@@ -269,15 +288,8 @@
   padding: 0 50px 82px;
 }
 
-.footer__address {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 135%;
-  font-style: normal;
-  justify-self: start; /* контакты прижаты к левому краю */
-  display: flex;
-  flex-direction: column;
-  list-style: none;
+.footer .address {
+  justify-self: start;
 }
 
 .footer__menu {
@@ -289,6 +301,7 @@
   line-height: auto;
   justify-self: center; /* меню по центру */
   align-items: center;
+  text-underline-offset: 4px;
 }
 
 .footer__social-list {
